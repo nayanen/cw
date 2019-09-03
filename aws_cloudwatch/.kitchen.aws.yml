@@ -1,0 +1,51 @@
+---
+driver:
+  name: ec2
+  aws_ssh_key_id: aws3
+  security_group_ids: ["sg-72f52634"]
+  region: us-east-1
+  subnet_id: subnet-4f060805
+  iam_profile_name: ec2-cloudwatch-logs
+  instance_type: t2.micro
+  associate_public_ip: true
+  interface: dns
+  tags:
+    created-by: test-kitchen
+
+transport:
+  ssh_key: ~/.aws/aws3
+  connection_timeout: 10
+  connection_retries: 3
+  username: root
+
+provisioner:
+  name: chef_zero
+  # You may wish to disable always updating cookbooks in CI or other testing environments.
+  # For example:
+  #   always_update_cookbooks: <%= !ENV['CI'] %>
+  always_update_cookbooks: true
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-16.04
+    transport:
+      username: ubuntu
+  - name: ubuntu-18.04
+    transport:
+      username: ubuntu
+  - name: centos-7
+  - name: fedora-29
+
+suites:
+  - name: default
+    run_list:
+      - recipe[test::install_configure_agent]
+    driver:
+      tags:
+        Name: test-kitchen-default
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:

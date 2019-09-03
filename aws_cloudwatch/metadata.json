@@ -1,0 +1,41 @@
+{
+  "name": "aws_cloudwatch",
+  "description": "Provides aws_cloudwatch_agent resource",
+  "long_description": "",
+  "maintainer": "Gennady Potapov",
+  "maintainer_email": "",
+  "license": "Apache-2.0",
+  "platforms": {
+    "ubuntu": "= 16.04",
+    "centos": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "amazon": ">= 0.0.0"
+  },
+  "dependencies": {
+
+  },
+  "providing": {
+
+  },
+  "attributes": {
+
+  },
+  "recipes": {
+
+  },
+  "version": "1.0.2",
+  "source_url": "https://github.com/gp42/aws_cloudwatch",
+  "issues_url": "https://github.com/gp42/aws_cloudwatch/issues",
+  "privacy": false,
+  "chef_versions": [
+    [
+      ">= 12.14"
+    ]
+  ],
+  "ohai_versions": [
+
+  ],
+  "gems": [
+
+  ]
+}
