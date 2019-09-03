@@ -1,7 +1,7 @@
-module AWSCloudwatch
-  class AgentInstaller < Chef::Resource
-    require_relative "agent_installer_helpers.rb"
-    include AWSCloudwatch::AgentInstallerHelpers
+#module AWSCloudwatch
+#  class AgentInstaller < Chef::Resource
+#    require_relative "agent_installer_helpers.rb"
+#   include AWSCloudwatch::AgentInstallerHelpers
 
     resource_name :aws_cloudwatch_agent
 
